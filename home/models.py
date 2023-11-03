@@ -20,7 +20,7 @@ class Doctors(models.Model):
     doc_image = models.ImageField(upload_to='doctors')
 
     def __str__(self):
-        return 'Dr ' +  self.doc_name + ' - (' + self.doc_spec + ')'
+        return self.doc_name + ' - (' + self.doc_spec + ')'
 
 
 class Booking(models.Model):

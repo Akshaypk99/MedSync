@@ -31,8 +31,6 @@ def doctors(request):
     }
     return render(request, 'doctors.html', dict_docs)
 
-def contact(request):
-    return render(request, 'contact.html')
 
 def department(request):
     dict_dept={

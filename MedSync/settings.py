@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-uisrpk$5($3d%7nu(mfxi=(0ly19$*7hg^b70v9k9jnqn2wv3@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'crispy_forms',
+    'crispy_bootstrap5',
     ]
 
 MIDDLEWARE = [
@@ -119,9 +120,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR/'static'
+# STATIC_ROOT = BASE_DIR/'static'
 STATIC_URL = 'static/'
-# STATIC_FILES_
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR ,'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -132,8 +135,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/media/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-
-
-
+CRISPY_TEMPLATE_PACK = "bootstrap5"
